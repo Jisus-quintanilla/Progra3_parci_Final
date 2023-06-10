@@ -1,0 +1,166 @@
+// Creción de nodos para diferentes aspectos de la inteligencia artificial
+CREATE (:Concepto {nombre: "Aprendizaje automático"})
+CREATE (:Concepto {nombre: "Procesamiento del lenguaje natural"})
+CREATE (:Concepto {nombre: "Redes neuronales"})
+CREATE (:Concepto {nombre: "Visión por computadora"})
+
+// Conectar los nodos con las relaciones
+MATCH (c1:Concepto {nombre: "Aprendizaje automático"})
+MATCH (c2:Concepto {nombre: "Procesamiento del lenguaje natural"})
+CREATE (c1)-[:RELACION]->(c2)
+
+MATCH (c1:Concepto {nombre: "Aprendizaje automático"})
+MATCH (c3:Concepto {nombre: "Redes neuronales"})
+CREATE (c1)-[:RELACION]->(c3)
+
+MATCH (c1:Concepto {nombre: "Aprendizaje automático"})
+MATCH (c4:Concepto {nombre: "Visión por computadora"})
+CREATE (c1)-[:RELACION]->(c4)
+
+// Sobre el lenguaje natural
+CREATE (:Relacion1 {nombre: "Asistentes inteligentes"})
+CREATE (:Relacion1 {nombre: "Resultados de la búsqueda"})
+CREATE (:Relacion1 {nombre: "Texto predictivo"})
+CREATE (:Relacion1 {nombre: "Traducción de idioma"})
+CREATE (:Relacion1 {nombre: "Análisis de datos"})
+CREATE (:Relacion1 {nombre: "Filtros de correo electrónico"})
+
+MATCH (c1:Concepto {nombre: "Procesamiento del lenguaje natural"})
+MATCH (c2:Relacion1 {nombre: "Asistentes inteligentes"})
+CREATE (c1)-[:RELACION]->(c2)
+
+MATCH (c1:Concepto {nombre: "Procesamiento del lenguaje natural"})
+MATCH (c2:Relacion1 {nombre: "Resultados de la búsqueda"})
+CREATE (c1)-[:RELACION]->(c2)
+
+MATCH (c1:Concepto {nombre: "Procesamiento del lenguaje natural"})
+MATCH (c2:Relacion1 {nombre: "Texto predictivo"})
+CREATE (c1)-[:RELACION]->(c2)
+
+MATCH (c1:Concepto {nombre: "Procesamiento del lenguaje natural"})
+MATCH (c2:Relacion1 {nombre: "Traducción de idioma"})
+CREATE (c1)-[:RELACION]->(c2)
+
+MATCH (c1:Concepto {nombre: "Procesamiento del lenguaje natural"})
+MATCH (c2:Relacion1 {nombre: "Análisis de datos"})
+CREATE (c1)-[:RELACION]->(c2)
+
+MATCH (c1:Concepto {nombre: "Procesamiento del lenguaje natural"})
+MATCH (c2:Relacion1 {nombre: "Filtros de correo electrónico"})
+CREATE (c1)-[:RELACION]->(c2)
+
+//Sobre las Redes neuronales
+CREATE (:Relacion2 {nombre: "Conjunto de entradas"})
+CREATE (:Relacion2 {nombre: "Funciones"})
+CREATE (:Relacion2 {nombre: "Salida de la neurona"})
+CREATE (:Relacion2 {nombre: "Tipos de redes neuronales"})
+
+MATCH (c1:Concepto {nombre: "Redes neuronales"})
+MATCH (c2:Relacion2 {nombre: "Conjunto de entradas"})
+CREATE (c1)-[:RELACION]->(c2)
+
+MATCH (c1:Concepto {nombre: "Redes neuronales"})
+MATCH (c2:Relacion2 {nombre: "Funciones"})
+CREATE (c1)-[:RELACION]->(c2)
+
+MATCH (c1:Concepto {nombre: "Redes neuronales"})
+MATCH (c2:Relacion2 {nombre: "Salida de la neurona"})
+CREATE (c1)-[:RELACION]->(c2)
+
+MATCH (c1:Concepto {nombre: "Redes neuronales"})
+MATCH (c2:Relacion2 {nombre: "Tipos de redes neuronales"})
+CREATE (c1)-[:RELACION]->(c2)
+
+
+//Sobre los tipos de redes neuronales
+CREATE (:Relacion2_1 {nombre: "Monocapa"})
+CREATE (:Relacion2_1 {nombre: "Multicapa"})
+CREATE (:Relacion2_1 {nombre: "Convolucional"})
+CREATE (:Relacion2_1 {nombre: "Concurrentes"})
+CREATE (:Relacion2_1 {nombre: "Radiales"})
+
+MATCH (c1:Relacion2 {nombre: "Tipos de redes neuronales"})
+MATCH (c2:Relacion2_1 {nombre: "Monocapa"})
+CREATE (c1)-[:Tipos]->(c2)
+
+MATCH (c1:Relacion2 {nombre: "Tipos de redes neuronales"})
+MATCH (c2:Relacion2_1 {nombre: "Multicapa"})
+CREATE (c1)-[:Tipos]->(c2)
+
+MATCH (c1:Relacion2 {nombre: "Tipos de redes neuronales"})
+MATCH (c2:Relacion2_1 {nombre: "Convolucional"})
+CREATE (c1)-[:Tipos]->(c2)
+
+MATCH (c1:Relacion2 {nombre: "Tipos de redes neuronales"})
+MATCH (c2:Relacion2_1 {nombre: "Concurrentes"})
+CREATE (c1)-[:Tipos]->(c2)
+
+MATCH (c1:Relacion2 {nombre: "Tipos de redes neuronales"})
+MATCH (c2:Relacion2_1 {nombre: "Radiales"})
+CREATE (c1)-[:Tipos]->(c2)
+
+//Sobre la visión por computadora
+CREATE (:Relacion3 {nombre: "Aplicaciones"})
+CREATE (:Relacion3 {nombre: "Como es diferente"})
+
+MATCH (c1:Concepto {nombre: "Visión por computadora"})
+MATCH (c2:Relacion3 {nombre: "Aplicaciones"})
+CREATE (c1)-[:RELACION]->(c2)
+
+MATCH (c1:Concepto {nombre: "Visión por computadora"})
+MATCH (c2:Relacion3 {nombre: "Como es diferente"})
+CREATE (c1)-[:RELACION]->(c2)
+
+//De las aplicaciones
+CREATE (:Relacion3_1 {nombre: "Organización del contenido"})
+CREATE (:Relacion3_1 {nombre: "Reconocimiento facial"})
+CREATE (:Relacion3_1 {nombre: "Realidad Aumentada"})
+CREATE (:Relacion3_1 {nombre: "Automóviles autoconductores"})
+
+MATCH (c1:Relacion3 {nombre: "Aplicaciones"})
+MATCH (c2:Relacion3_1 {nombre: "Organización del contenido"})
+CREATE (c1)-[:Aplicacion]->(c2)
+
+MATCH (c1:Relacion3 {nombre: "Aplicaciones"})
+MATCH (c2:Relacion3_1 {nombre: "Reconocimiento facial"})
+CREATE (c1)-[:Aplicacion]->(c2)
+
+MATCH (c1:Relacion3 {nombre: "Aplicaciones"})
+MATCH (c2:Relacion3_1 {nombre: "Realidad Aumentada"})
+CREATE (c1)-[:Aplicacion]->(c2)
+
+MATCH (c1:Relacion3 {nombre: "Aplicaciones"})
+MATCH (c2:Relacion3_1 {nombre: "Automóviles autoconductores"})
+CREATE (c1)-[:Aplicacion]->(c2)
+
+//De como es diferente
+CREATE (:Relacion3_2 {nombre: "Procesamiento de la imagen"})
+CREATE (:Relacion3_2 {nombre: "La visión artificial"})
+
+MATCH (c1:Relacion3 {nombre: "Como es diferente"})
+MATCH (c2:Relacion3_2 {nombre: "Procesamiento de la imagen"})
+CREATE (c1)-[:Diferencia]->(c2)
+
+MATCH (c1:Relacion3 {nombre: "Como es diferente"})
+MATCH (c2:Relacion3_2 {nombre: "La visión artificial"})
+CREATE (c1)-[:Diferencia]->(c2)
+
+
+//Actualizar nombre
+MATCH (c1:Relacion3 {nombre: "Como ya no es diferente diferente"})
+Set c1.nombre = "Como es diferente"
+RETURN c1
+
+//Eliminar todos los nodos
+DET MATCH (n) DETACH DELETE n
+
+//Eliminar un solo nodo
+MATCH (c1:Relacion3_2 {nombre: "Procesamiento de la imagen"})
+DETACH Delete c1
+
+MATCH (c1:Concepto {nombre: "Aprendizaje automático"})
+DETACH Delete c1
+
+
+//Mostrar
+MATCH (n) RETURN n 
